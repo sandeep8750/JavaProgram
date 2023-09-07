@@ -1,0 +1,102 @@
+
+class Node {
+	int data;
+	Node nextNode;
+
+	public Node(int data) {
+		this.data = data;
+	}
+}
+
+class CircularLinkedList {
+	Node head;
+
+	void insert(int data) {
+		Node a = new Node(data);
+		if (head == null) {
+			head = a;
+			a.nextNode = head;
+		}
+
+		else {
+			Node p = head;
+
+			while (p.nextNode != head) {
+				p = p.nextNode;
+			}
+			p.nextNode = a;
+			a.nextNode = head;
+		}
+
+	}
+
+	void insertAtMiddle( int data, int position) {
+
+		Node a = new Node(data);
+
+		if (position == 0) {
+			a.nextNode = head;
+			head = a;
+		} else {
+			Node p = head;
+
+			while (position >1) {
+				p = p.nextNode;
+				position--;
+			}
+
+			a.nextNode = p.nextNode;
+			p.nextNode = a;
+		}
+
+	}
+
+	public void Deletion(int value) {
+		Node p = head;
+		Node prev = null;
+
+		if (p != null && p.data == value) {
+			head = p.nextNode;
+		} else {
+			while (p != null && p.data != value) {
+
+				prev = p;
+				p = p.nextNode;
+			}
+			if (p != null) {
+				prev.nextNode = p.nextNode;
+
+			} else {
+ 
+			}
+		}
+	}
+
+	public void print() {
+		Node start = head;
+
+		while (start.nextNode != head) {
+			System.out.print(start.data + "->");
+			start = start.nextNode;
+		}
+		System.out.print(start.data);
+
+	}
+}
+
+public class TestCLL {
+
+	public static void main(String[] args) {
+		CircularLinkedList circularLinkedList = new CircularLinkedList();
+
+		circularLinkedList.insert(10);
+		circularLinkedList.insert(20);
+		circularLinkedList.insert(30);
+		circularLinkedList.insert(40);
+		circularLinkedList.insert(50);
+		
+
+		circularLinkedList.print();
+	}
+
+}

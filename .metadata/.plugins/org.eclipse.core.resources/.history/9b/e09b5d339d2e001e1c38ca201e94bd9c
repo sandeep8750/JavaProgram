@@ -1,0 +1,45 @@
+class Node{
+	int data ; 
+	Node nextNode;
+	
+	public Node( int data ) {
+		this.data = data ;
+		nextNode = null;
+	}
+}
+
+class CircularLL {
+	
+	Node head ;
+	
+	void insert(int data ) {
+		Node node = new Node(data);
+		
+		if(head == null)
+		{
+			node.nextNode = head ;
+			head = node;
+		}
+		else {
+			Node start = head ; 
+			
+			while(start.nextNode != head )
+			{
+				start = start.nextNode ;
+			}
+			
+			start.nextNode = node ;
+			node.nextNode = head ;
+		}
+		
+	}
+	
+	
+	
+}
+
+class TestCLL{
+	public static void main(String[] args) {
+		
+	}
+}

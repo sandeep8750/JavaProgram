@@ -1,0 +1,15 @@
+
+public class BinaryTree {
+	
+	Node root = null;
+	
+	public void preOrder( Node root ) {
+		
+		if(root != null)
+		{
+			System.out.println(root.data);
+			preOrder(root.leftNode);
+		}
+	}
+	
+}

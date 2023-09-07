@@ -1,0 +1,17 @@
+
+public class Node {
+	
+	Integer  data; 
+	Node leftNode ;
+	Node rightNode; 
+	
+	public Node() {
+		System.out.println("Node.Node()");		
+	}
+	Node(int data ){
+		
+		data = this.data;
+		leftNode = null;
+		rightNode = null;
+	}
+}

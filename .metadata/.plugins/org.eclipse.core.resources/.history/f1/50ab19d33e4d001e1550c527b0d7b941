@@ -1,0 +1,15 @@
+
+public class Node {
+	
+	int  data; 
+	Node leftNode ;
+	Node rightNode; 
+	
+	
+	Node(int data ){
+		
+		data = this.data;
+		leftNode = null;
+		rightNode = null;
+	}
+}
